@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Licensing & Token Budget Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Licensing & Token Budget Planner (LLM/API)</h1>
+        <p>Estimate monthly token spend and check against budgets per environment. All data is saved locally in your browser.</p>
+    </header>
+
+    <main id="app">
+        
+        <section class="card">
+            <h2>Vendor Plans</h2>
+            <p>Define the pricing for each vendor plan you use. Costs are per 1,000 tokens.</p>
+            <div id="vendor-plans-table"></div>
+            <button id="add-plan-btn" class="btn">+ Add Vendor Plan</button>
+        </section>
+
+        <section class="card">
+            <h2>Environments & Usage</h2>
+            <p>Model your usage for each environment. Assign a vendor plan from the list above.</p>
+            <div id="environments-table"></div>
+            <button id="add-env-btn" class="btn">+ Add Environment</button>
+        </section>
+
+        <section class="card">
+            <h2>Monthly Cost Projection</h2>
+            <p>This is the estimated spend based on your inputs. Status alerts trigger based on your budget thresholds.</p>
+            <div id="results-table"></div>
+        </section>
+
+        <section class="card">
+            <h2>Visuals</h2>
+            <div class="chart-container">
+                <h3>Cost by Environment</h3>
+                <div id="cost-chart" class="chart"></div>
+            </div>
+            <div class="chart-container">
+                <h3>Token Share (Prompt vs. Completion)</h3>
+                <div id="token-chart" class="chart"></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Actions</h2>
+            <button id="export-csv-btn" class="btn">Download CSV (Results)</button>
+            <button id="export-json-btn" class="btn">Download JSON (Full Config)</button>
+            <button id="reset-btn" class="btn btn-danger">Reset to Defaults</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>A dependency-free tool. No data ever leaves your computer.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>

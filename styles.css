@@ -1,0 +1,227 @@
+:root {
+    --color-bg: #f4f7f6;
+    --color-surface: #ffffff;
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-border: #e0e0e0;
+    --color-primary: #007aff;
+    --color-primary-light: #e6f2ff;
+    --color-green: #34c759;
+    --color-amber: #ff9500;
+    --color-red: #ff3b30;
+    --border-radius: 8px;
+    --shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+    padding: 24px;
+    line-height: 1.6;
+}
+
+header, footer {
+    max-width: 1200px;
+    margin: 0 auto 24px auto;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p, footer p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+main#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 24px;
+}
+
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.card h2 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 8px;
+}
+
+/* Tables */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+th {
+    background-color: var(--color-bg);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+}
+
+td {
+    font-size: 0.9rem;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    box-sizing: border-box; /* Important for 100% width */
+    min-width: 80px;
+}
+
+input[type="number"] {
+    max-width: 120px;
+}
+
+select {
+    min-width: 120px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    border: 1px solid var(--color-primary-light);
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-right: 8px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-danger {
+    color: var(--color-red);
+    background-color: #ffebee;
+}
+.btn-danger:hover {
+    background-color: var(--color-red);
+    color: #fff;
+}
+
+.btn-delete {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    color: var(--color-red);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.btn-delete:hover {
+    background: #ffebee;
+    border-radius: 4px;
+}
+
+/* Results & Alerts */
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.status-GREEN { background-color: #eaf8ed; color: #2a6f3b; }
+.status-AMBER { background-color: #fff6e6; color: #995c00; }
+.status-RED { background-color: #ffebee; color: #b72c2c; }
+
+.suggestion {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-top: 4px;
+}
+
+/* Charts */
+.chart-container {
+    margin-top: 20px;
+}
+.chart-container h3 {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: 12px;
+}
+.chart {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 16px;
+    background: var(--color-bg);
+}
+.chart-bar-group {
+    margin-bottom: 12px;
+}
+.chart-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.chart-bar-container {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    background: var(--color-border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.chart-bar {
+    height: 100%;
+    transition: width 0.3s ease;
+    font-size: 0.75rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.bar-prompt { background-color: #007aff; }
+.bar-completion { background-color: #34c759; }
+.bar-cost { background-color: #5856d6; }
